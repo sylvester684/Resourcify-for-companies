@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  background: #000000;
+  padding: 20px;
+}
+
+.search {
+  position: relative;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  transition: width 0.5s;
+}
+
+.active {
+  width: 400px;
+}
+
+.search-bar {
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  border: 0.125rem solid black;
+  border-radius: 2rem;
+  outline: none;
+  font: 1rem helvetica, sans-serif;
+  letter-spacing: 0.05rem;
+  padding-left: 2rem;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+::-webkit-search-cancel-button {
+  position: absolute;
+  right: 4.5rem;
+  filter: grayscale(100%) invert(20%);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.search-btn {
+  position: absolute;
+  right: 0.5rem;
+  width: 3rem;
+  height: 3rem;
+  border: none;
+  background-color: white;
+  border: 0.1rem solid white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+
+.search-icon {
+  position: absolute;
+  color: rgb(0, 0, 0);
+  font-size: 1.5rem;
+}
+
+.search-glass {
+  opacity: 1;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.active .search-glass {
+  opacity: 0;
+  transform: rotate(360deg);
+}
+
+.search-close {
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.active .search-close {
+  opacity: 1;
+  transform: rotate(360deg);
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: #f0f0f0; /* You can set a background color for the header */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000; /* Ensure the logo is above other elements */
+}
+
+.logo {
+  height: 40px; /* Adjust the height according to your design */
+}
